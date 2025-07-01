@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment débuter en programmation en 2025 - ViewStream</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/player.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="icon" type="image/svg+xml" href="svg/logo.svg">
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-toggle" id="menuToggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <a href="index.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="8" fill="#FF0000"/>
+                    <path d="M8 8l8 8 8-8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="16" cy="16" r="4" fill="white"/>
+                </svg>
+                <span>ViewStream</span>
+            </a>
+        </div>
+        
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" placeholder="Rechercher..." id="searchInput">
+                <button class="search-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2"/>
+                        <path d="m14 14-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <button class="upload-btn" onclick="location.href='upload.html'">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <button class="notifications-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2"/>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span class="notification-badge">3</span>
+            </button>
+            <button class="profile-btn" onclick="location.href='channel.html'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="12" r="6" fill="#FF6B6B"/>
+                    <path d="M4 28c0-6.627 5.373-12 12-12s12 5.373 12 12" fill="#FF6B6B"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="watch-content">
+        <!-- Video Player Section -->
+        <div class="video-section">
+            <!-- Video Player -->
+            <div class="video-player-container">
+                <div class="video-player" id="videoPlayer">
+                    <video id="mainVideo" poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgZmlsbD0ibm9uZSI+CiAgPHJlY3Qgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIiBmaWxsPSIjMkMyQzJDIi8+CiAgPGNpcmNsZSBjeD0iNjQwIiBjeT0iMzYwIiByPSI4MCIgZmlsbD0iI0ZGMDAwMCIvPgogIDxwYXRoIGQ9Ik02MDAgMzIwbDgwIDQwLTgwIDQweiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+">
+                        <source src="#" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture vidéo.
+                    </video>
+                    
+                    <!-- Custom Video Controls -->
+                    <div class="video-controls" id="videoControls">
+                        <div class="progress-bar">
+                            <div class="progress-filled" id="progressFilled"></div>
+                            <div class="progress-handle" id="progressHandle"></div>
+                        </div>
+                        
+                        <div class="controls-main">
+                            <div class="controls-left">
+                                <button class="play-pause-btn" id="playPauseBtn">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="play-icon">
+                                        <path d="M8 5v14l11-7z" fill="currentColor"/>
+                                    </svg>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="pause-icon">
+                                        <path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="currentColor"/>
+                                    </svg>
+                                </button>
+                                
+                                <button class="rewind-btn" id="rewindBtn">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M8 10l4-4v8l-4-4zM4 10l4-4v8l-4-4z" fill="currentColor"/>
+                                    </svg>
+                                </button>
+                                
+                                <button class="forward-btn" id="forwardBtn">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M12 10l-4 4V6l4 4zM16 10l-4 4V6l4 4z" fill="currentColor"/>
+                                    </svg>
+                                </button>
+                                
+                                <div class="volume-control">
+                                    <button class="volume-btn" id="volumeBtn">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="volume-high">
+                                            <path d="M9 4v12l6-6zM15.5 8c0-1.5-1-2.5-2.5-2.5M15.5 12c0-1.5-1-2.5-2.5-2.5" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="volume-muted">
+                                            <path d="M9 4v12l6-6zM15 4l2 2M17 18l-2-2" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                    <div class="volume-slider">
+                                        <input type="range" id="volumeSlider" min="0" max="100" value="100">
+                                    </div>
+                                </div>
+                                
+                                <div class="time-display">
+                                    <span id="currentTime">0:00</span>
+                                    <span>/</span>
+                                    <span id="duration">0:00</span>
+                                </div>
+                            </div>
+                            
+                            <div class="controls-right">
+                                <button class="settings-btn" id="settingsBtn">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+                                        <path d="M10 6V4M10 16v-2M14 10h2M4 10h2M13.66 6.34l1.41-1.41M4.93 17.07l1.41-1.41M6.34 6.34L4.93 4.93M17.07 17.07l-1.41-1.41" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </button>
+                                
+                                <button class="quality-btn" id="qualityBtn">
+                                    <span>1080p</span>
+                                </button>
+                                
+                                <button class="theater-btn" id="theaterBtn">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <rect x="2" y="4" width="16" height="12" rx="1" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M2 8h16" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </button>
+                                
+                                <button class="fullscreen-btn" id="fullscreenBtn">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M3 7h4V3M17 7h-4V3M3 13h4v4M17 13h-4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Settings Menu -->
+                    <div class="settings-menu" id="settingsMenu">
+                        <div class="settings-item">
+                            <span>Qualité</span>
+                            <select id="qualitySelect">
+                                <option value="auto">Auto</option>
+                                <option value="1080p">1080p</option>
+                                <option value="720p">720p</option>
+                                <option value="480p">480p</option>
+                                <option value="360p">360p</option>
+                            </select>
+                        </div>
+                        <div class="settings-item">
+                            <span>Vitesse</span>
+                            <select id="speedSelect">
+                                <option value="0.25">0.25x</option>
+                                <option value="0.5">0.5x</option>
+                                <option value="0.75">0.75x</option>
+                                <option value="1" selected>Normal</option>
+                                <option value="1.25">1.25x</option>
+                                <option value="1.5">1.5x</option>
+                                <option value="2">2x</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Info -->
+            <div class="video-info">
+                <div class="video-header">
+                    <h1 class="video-title">Comment débuter en programmation en 2025 - Guide complet pour débutants</h1>
+                    <div class="video-stats">
+                        <div class="stats-left">
+                            <span class="view-count">1,234,567 vues</span>
+                            <span class="upload-date">il y a 2 semaines</span>
+                        </div>
+                        <div class="stats-right">
+                            <button class="like-btn" id="likeBtn">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M10 18l-1.45-1.32C5.11 12.36 2 9.28 2 5.5 2 2.42 4.42 0 7.5 0c1.74 0 3.41.81 4.5 2.09C13.09.81 14.76 0 16.5 0 19.58 0 22 2.42 22 5.5c0 3.78-3.11 6.86-6.55 11.54L10 18z" fill="currentColor"/>
+                                </svg>
+                                <span>125K</span>
+                            </button>
+                            <button class="dislike-btn" id="dislikeBtn">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M10 2l1.45 1.32C14.89 7.64 18 10.72 18 14.5c0 3.08-2.42 5.5-5.5 5.5-1.74 0-3.41-.81-4.5-2.09C6.91 19.19 5.24 20 3.5 20 0.42 20-2 17.58-2 14.5c0-3.78 3.11-6.86 6.55-11.54L10 2z" fill="currentColor"/>
+                                </svg>
+                            </button>
+                            <button class="share-btn" id="shareBtn">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M18 8a3 3 0 1 0-2.977-2.63l-4.94 2.47a3 3 0 1 0 0 4.319l4.94 2.47a3 3 0 1 0 .895-1.789l-4.94-2.47a3.027 3.027 0 0 0 0-.74l4.94-2.47C17.456 7.68 17.763 8 18 8z" fill="currentColor"/>
+                                </svg>
+                                <span>Partager</span>
+                            </button>
+                            <button class="save-btn" id="saveBtn">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M17 3H5c-1.1 0-2 .9-2 2v14l7-3 7 3V5c0-1.1-.9-2-2-2z" fill="currentColor"/>
+                                </svg>
+                                <span>Sauvegarder</span>
+                            </button>
+                            <button class="more-btn" id="moreBtn">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <circle cx="10" cy="6" r="1" fill="currentColor"/>
+                                    <circle cx="10" cy="10" r="1" fill="currentColor"/>
+                                    <circle cx="10" cy="14" r="1" fill="currentColor"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Channel Info -->
+                <div class="channel-info">
+                    <div class="channel-avatar">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="18" r="9" fill="#4ECDC4"/>
+                            <path d="M6 42c0-9.941 8.059-18 18-18s18 8.059 18 18" fill="#4ECDC4"/>
+                        </svg>
+                    </div>
+                    <div class="channel-details">
+                        <h3 class="channel-name">TechMaster Pro</h3>
+                        <p class="subscriber-count">2.5M abonnés</p>
+                    </div>
+                    <button class="subscribe-btn" id="subscribeBtn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        S'abonner
+                    </button>
+                </div>
+
+                <!-- Video Description -->
+                <div class="video-description">
+                    <div class="description-preview" id="descriptionPreview">
+                        <p>Dans cette vidéo, nous allons voir comment débuter en programmation en 2025. Je vais vous guider à travers les meilleures ressources, outils et langages pour commencer votre voyage dans le monde du code...</p>
+                        <button class="show-more-btn" id="showMoreBtn">Afficher plus</button>
+                    </div>
+                    <div class="description-full" id="descriptionFull" style="display: none;">
+                        <p>Dans cette vidéo, nous allons voir comment débuter en programmation en 2025. Je vais vous guider à travers les meilleures ressources, outils et langages pour commencer votre voyage dans le monde du code.</p>
+                        
+                        <h4>📚 Ressources mentionnées :</h4>
+                        <ul>
+                            <li>FreeCodeCamp - Cours gratuits</li>
+                            <li>The Odin Project - Parcours complet</li>
+                            <li>GitHub - Portfolio de projets</li>
+                            <li>Stack Overflow - Communauté d'entraide</li>
+                        </ul>
+                        
+                        <h4>🛠️ Outils recommandés :</h4>
+                        <ul>
+                            <li>Visual Studio Code - Éditeur de code</li>
+                            <li>Git - Contrôle de version</li>
+                            <li>GitHub - Hébergement de code</li>
+                            <li>Discord - Communautés de développeurs</li>
+                        </ul>
+                        
+                        <h4>🎯 Langages pour débuter :</h4>
+                        <ul>
+                            <li>HTML/CSS - Structure et style web</li>
+                            <li>JavaScript - Programmation web</li>
+                            <li>Python - Programmation générale</li>
+                            <li>SQL - Bases de données</li>
+                        </ul>
+                        
+                        <p>N'oubliez pas de vous abonner pour plus de contenu sur la programmation !</p>
+                        
+                        <button class="show-less-btn" id="showLessBtn">Afficher moins</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section">
+                <div class="comments-header">
+                    <h3>Commentaires (1,234)</h3>
+                    <button class="sort-btn" id="sortBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Trier par
+                    </button>
+                </div>
+                
+                <div class="comment-form">
+                    <div class="comment-avatar">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="12" r="6" fill="#FF6B6B"/>
+                            <path d="M4 28c0-6.627 5.373-12 12-12s12 5.373 12 12" fill="#FF6B6B"/>
+                        </svg>
+                    </div>
+                    <div class="comment-input-container">
+                        <input type="text" placeholder="Ajouter un commentaire..." id="commentInput">
+                        <div class="comment-actions">
+                            <button class="cancel-btn" id="cancelCommentBtn">Annuler</button>
+                            <button class="comment-btn" id="submitCommentBtn" disabled>Commenter</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comments-list" id="commentsList">
+                    <!-- Généré par JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggested Videos Sidebar -->
+        <aside class="suggested-videos">
+            <h3>Vidéos suggérées</h3>
+            <div class="suggested-list" id="suggestedList">
+                <!-- Généré par JavaScript -->
+            </div>
+        </aside>
+    </main>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="sun-icon">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="moon-icon">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+        </svg>
+    </button>
+
+    <script src="js/app.js"></script>
+    <script src="js/player.js"></script>
+</body>
+</html> 

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abonnements - ViewStream</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="icon" type="image/svg+xml" href="svg/logo.svg">
+    <style>
+        .subscriptions-page {
+            padding: 20px;
+            margin-left: 240px;
+        }
+        
+        .subscriptions-header {
+            margin-bottom: 24px;
+        }
+        
+        .subscriptions-header h1 {
+            color: var(--text-primary);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .subscriptions-header p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+        
+        .subscriptions-tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .subscription-tab {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .subscription-tab:hover {
+            color: var(--text-primary);
+        }
+        
+        .subscription-tab.active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+        
+        .subscriptions-content {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .subscriptions-sidebar {
+            width: 280px;
+            flex-shrink: 0;
+        }
+        
+        .subscriptions-feed {
+            flex: 1;
+        }
+        
+        .channel-list {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .channel-list h3 {
+            color: var(--text-primary);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .channel-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-bottom: 8px;
+        }
+        
+        .channel-item:hover {
+            background: var(--bg-hover);
+        }
+        
+        .channel-item.active {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .channel-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .channel-info {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .channel-name {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .channel-stats {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .subscription-videos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        
+        .subscription-video-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .subscription-video-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .subscription-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            background: var(--bg-tertiary);
+        }
+        
+        .subscription-thumbnail svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .subscription-duration {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .subscription-video-info {
+            padding: 16px;
+        }
+        
+        .subscription-video-title {
+            color: var(--text-primary);
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .subscription-video-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        
+        .subscription-channel-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+        }
+        
+        .subscription-channel-name {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        .subscription-video-stats {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        .subscription-date {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+        
+        .empty-state svg {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+        
+        .empty-state h3 {
+            color: var(--text-primary);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .empty-state p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .subscribe-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .subscribe-btn:hover {
+            background: var(--accent-hover);
+        }
+        
+        @media (max-width: 1024px) {
+            .subscriptions-content {
+                flex-direction: column;
+            }
+            
+            .subscriptions-sidebar {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .subscriptions-page {
+                margin-left: 0;
+                padding: 16px;
+            }
+            
+            .subscription-videos {
+                grid-template-columns: 1fr;
+            }
+            
+            .subscriptions-tabs {
+                gap: 0;
+            }
+            
+            .subscription-tab {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-toggle" id="menuToggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <a href="index.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="8" fill="#FF0000"/>
+                    <path d="M8 8l8 8 8-8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="16" cy="16" r="4" fill="white"/>
+                </svg>
+                <span>ViewStream</span>
+            </a>
+        </div>
+        
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" placeholder="Rechercher..." id="searchInput">
+                <button class="search-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2"/>
+                        <path d="m14 14-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="search-suggestions" id="searchSuggestions"></div>
+        </div>
+        
+        <div class="header-right">
+            <button class="upload-btn" onclick="location.href='upload.html'">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <button class="notifications-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2"/>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span class="notification-badge">3</span>
+            </button>
+            <button class="profile-btn" onclick="location.href='channel.html'">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="12" r="6" fill="#FF6B6B"/>
+                    <path d="M4 28c0-6.627 5.373-12 12-12s12 5.373 12 12" fill="#FF6B6B"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <a href="index.html" class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2"/>
+                        <polyline points="9,22 9,12 15,12 15,22" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Accueil</span>
+                </a>
+                <a href="trending.html" class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M23 6l-9.5 9.5-5-5L1 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Tendances</span>
+                </a>
+                <a href="subscriptions.html" class="nav-item active">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="currentColor" stroke-width="2"/>
+                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Abonnements</span>
+                </a>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Bibliothèque</h3>
+                <a href="library.html" class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 3h18v18H3z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M9 9h6v6H9z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Bibliothèque</span>
+                </a>
+                <a href="history.html" class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Historique</span>
+                </a>
+                <a href="watch-later.html" class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>À regarder</span>
+                </a>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Abonnements</h3>
+                <div class="subscription-channels" id="subscriptionChannels">
+                    <!-- Généré par JavaScript -->
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="subscriptions-page">
+        <div class="subscriptions-header">
+            <h1>Abonnements</h1>
+            <p>Vidéos de vos chaînes préférées</p>
+        </div>
+
+        <div class="subscriptions-tabs">
+            <button class="subscription-tab active" data-tab="feed">Flux</button>
+            <button class="subscription-tab" data-tab="channels">Chaînes</button>
+            <button class="subscription-tab" data-tab="manage">Gérer</button>
+        </div>
+
+        <div class="subscriptions-content">
+            <div class="subscriptions-sidebar">
+                <div class="channel-list">
+                    <h3>Vos abonnements</h3>
+                    <div id="channelList">
+                        <!-- Généré par JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="subscriptions-feed">
+                <div id="subscriptionsContent">
+                    <!-- Généré par JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mini Player -->
+    <div class="mini-player" id="miniPlayer">
+        <div class="mini-player-content">
+            <div class="mini-thumbnail">
+                <svg width="120" height="68" viewBox="0 0 120 68" fill="none">
+                    <rect width="120" height="68" fill="#2C2C2C"/>
+                    <circle cx="60" cy="34" r="15" fill="#FF0000"/>
+                    <path d="M55 29l8 5-8 5z" fill="white"/>
+                </svg>
+                <button class="mini-play-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4l6 4-6 4z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mini-info">
+                <h4 class="mini-title">Titre de la vidéo en cours</h4>
+                <p class="mini-channel">Nom de la chaîne</p>
+            </div>
+            <div class="mini-controls">
+                <button class="mini-next-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 4l6 6-6 6M10 4l6 6-6 6" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+                <button class="mini-close-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M15 5l-10 10M5 5l10 10" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="sun-icon">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="moon-icon">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+        </svg>
+    </button>
+
+    <script src="js/app.js"></script>
+    <script src="js/search.js"></script>
+    <script>
+        // Mock subscription data
+        const subscriptionChannels = [
+            { id: 1, name: "TechMaster Pro", avatar: "techmaster", videos: 1247, subscribers: "2.5M", newVideos: 3 },
+            { id: 2, name: "TechReview", avatar: "techreview", videos: 856, subscribers: "1.2M", newVideos: 1 },
+            { id: 3, name: "CuisineFacile", avatar: "cuisine", videos: 432, subscribers: "890K", newVideos: 2 },
+            { id: 4, name: "GameZone", avatar: "gamezone", videos: 2341, subscribers: "3.1M", newVideos: 5 },
+            { id: 5, name: "MusicAcademy", avatar: "musicacademy", videos: 567, subscribers: "1.8M", newVideos: 0 }
+        ];
+
+        const subscriptionVideos = [
+            { id: 24, title: "Nouveau tutoriel React 2025", channel: "TechMaster Pro", channelId: 1, views: 45000, uploadDate: "il y a 2 heures", duration: "18:30", thumbnail: "react" },
+            { id: 25, title: "Test du dernier smartphone", channel: "TechReview", channelId: 2, views: 32000, uploadDate: "il y a 4 heures", duration: "12:45", thumbnail: "smartphone" },
+            { id: 26, title: "Recette de gâteau au chocolat", channel: "CuisineFacile", channelId: 3, views: 28000, uploadDate: "il y a 6 heures", duration: "8:20", thumbnail: "cake" },
+            { id: 27, title: "Gameplay du nouveau jeu", channel: "GameZone", channelId: 4, views: 67000, uploadDate: "il y a 8 heures", duration: "22:15", thumbnail: "gameplay" },
+            { id: 28, title: "Cours de piano pour débutants", channel: "MusicAcademy", channelId: 5, views: 19000, uploadDate: "il y a 1 jour", duration: "15:40", thumbnail: "piano" }
+        ];
+
+        function renderChannelList() {
+            const channelList = document.getElementById('channelList');
+            
+            channelList.innerHTML = subscriptionChannels.map(channel => `
+                <div class="channel-item" onclick="filterByChannel(${channel.id})">
+                    <div class="channel-avatar">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="6" r="3" fill="#FF6B6B"/>
+                            <path d="M2 18c0-3.314 2.686-6 6-6s6 2.686 6 6" fill="#FF6B6B"/>
+                        </svg>
+                    </div>
+                    <div class="channel-info">
+                        <div class="channel-name">${channel.name}</div>
+                        <div class="channel-stats">${channel.videos} vidéos • ${channel.subscribers}</div>
+                    </div>
+                    ${channel.newVideos > 0 ? `<span style="background: var(--accent-color); color: white; padding: 2px 6px; border-radius: 10px; font-size: 11px; font-weight: 600;">${channel.newVideos}</span>` : ''}
+                </div>
+            `).join('');
+        }
+
+        function renderSubscriptionVideos(videos = subscriptionVideos) {
+            const content = document.getElementById('subscriptionsContent');
+            
+            if (videos.length === 0) {
+                content.innerHTML = `
+                    <div class="empty-state">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="currentColor" stroke-width="2"/>
+                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <h3>Aucune vidéo trouvée</h3>
+                        <p>Il n'y a pas encore de vidéos de cette chaîne dans votre flux d'abonnements.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            content.innerHTML = `
+                <div class="subscription-videos">
+                    ${videos.map(video => createSubscriptionVideoCard(video)).join('')}
+                </div>
+            `;
+        }
+
+        function createSubscriptionVideoCard(video) {
+            return `
+                <div class="subscription-video-card" onclick="openVideo(${video.id})">
+                    <div class="subscription-thumbnail">
+                        <svg width="320" height="180" viewBox="0 0 320 180" fill="none">
+                            <rect width="320" height="180" fill="#2C2C2C"/>
+                            <circle cx="160" cy="90" r="40" fill="#FF0000"/>
+                            <path d="M140 70l20 20-20 20z" fill="white"/>
+                        </svg>
+                        <div class="subscription-duration">${video.duration}</div>
+                    </div>
+                    <div class="subscription-video-info">
+                        <h4 class="subscription-video-title">${video.title}</h4>
+                        <div class="subscription-video-meta">
+                            <div class="subscription-channel-avatar">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="8" r="4" fill="#FF6B6B"/>
+                                    <path d="M2 20c0-4.418 3.582-8 8-8s8 3.582 8 8" fill="#FF6B6B"/>
+                                </svg>
+                            </div>
+                            <span class="subscription-channel-name">${video.channel}</span>
+                        </div>
+                        <div class="subscription-video-stats">
+                            ${formatNumber(video.views)} vues • ${video.uploadDate}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function filterByChannel(channelId) {
+            // Update active channel
+            document.querySelectorAll('.channel-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+            
+            // Filter videos
+            const filteredVideos = subscriptionVideos.filter(video => video.channelId === channelId);
+            renderSubscriptionVideos(filteredVideos);
+        }
+
+        function initSubscriptionTabs() {
+            const tabs = document.querySelectorAll('.subscription-tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    const tabType = tab.dataset.tab;
+                    switchTab(tabType);
+                });
+            });
+        }
+
+        function switchTab(tabType) {
+            const content = document.getElementById('subscriptionsContent');
+            
+            switch(tabType) {
+                case 'feed':
+                    renderSubscriptionVideos();
+                    break;
+                case 'channels':
+                    content.innerHTML = `
+                        <div class="subscription-videos">
+                            ${subscriptionChannels.map(channel => createChannelCard(channel)).join('')}
+                        </div>
+                    `;
+                    break;
+                case 'manage':
+                    content.innerHTML = `
+                        <div class="empty-state">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <h3>Gérer les abonnements</h3>
+                            <p>Fonctionnalité de gestion des abonnements à venir.</p>
+                        </div>
+                    `;
+                    break;
+            }
+        }
+
+        function createChannelCard(channel) {
+            return `
+                <div class="subscription-video-card" onclick="openChannel(${channel.id})">
+                    <div class="subscription-thumbnail">
+                        <svg width="320" height="180" viewBox="0 0 320 180" fill="none">
+                            <rect width="320" height="180" fill="#2C2C2C"/>
+                            <circle cx="160" cy="90" r="40" fill="#FF6B6B"/>
+                        </svg>
+                    </div>
+                    <div class="subscription-video-info">
+                        <h4 class="subscription-video-title">${channel.name}</h4>
+                        <div class="subscription-video-stats">
+                            ${channel.videos} vidéos • ${channel.subscribers} abonnés
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize subscriptions page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderChannelList();
+            renderSubscriptionVideos();
+            initSubscriptionTabs();
+        });
+    </script>
+</body>
+</html> 
