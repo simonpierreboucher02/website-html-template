@@ -1,0 +1,51 @@
+<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="workspaceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#48bb78;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#38a169;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="250" fill="url(#workspaceGradient)"/>
+  
+  <!-- Desk -->
+  <rect x="50" y="150" width="300" height="20" fill="#8b5cf6" opacity="0.8"/>
+  <rect x="50" y="150" width="300" height="8" fill="#7c3aed" opacity="0.6"/>
+  
+  <!-- Monitor -->
+  <rect x="80" y="80" width="120" height="80" rx="8" fill="#2d3748" opacity="0.8"/>
+  <rect x="85" y="85" width="110" height="70" rx="4" fill="#667eea" opacity="0.3"/>
+  
+  <!-- Monitor stand -->
+  <rect x="135" y="160" width="10" height="20" fill="#2d3748" opacity="0.8"/>
+  
+  <!-- Laptop -->
+  <rect x="220" y="120" width="100" height="60" rx="4" fill="#4a5568" opacity="0.8"/>
+  <rect x="225" y="125" width="90" height="50" fill="#667eea" opacity="0.2"/>
+  
+  <!-- Coffee cup -->
+  <path d="M 320 130 L 320 150 C 320 152 322 154 324 154 L 328 154 C 330 154 332 152 332 150 L 332 130" 
+        stroke="#f56565" stroke-width="2" fill="none"/>
+  <path d="M 332 135 C 335 135 336 136 336 137 C 336 138 335 139 332 139" 
+        stroke="#f56565" stroke-width="2" fill="none"/>
+  
+  <!-- Plant -->
+  <rect x="60" y="140" width="8" height="20" fill="#8b5cf6" opacity="0.6"/>
+  <circle cx="64" cy="135" r="12" fill="#48bb78" opacity="0.6"/>
+  <circle cx="60" cy="130" r="8" fill="#38a169" opacity="0.7"/>
+  <circle cx="68" cy="132" r="6" fill="#38a169" opacity="0.7"/>
+  
+  <!-- Organized items -->
+  <rect x="280" y="130" width="15" height="20" fill="#ed8936" opacity="0.6"/>
+  <rect x="285" y="135" width="5" height="10" fill="#f8f9fa" opacity="0.8"/>
+  
+  <!-- Floating elements representing organization -->
+  <circle cx="100" cy="60" r="8" fill="#48bb78" opacity="0.4"/>
+  <circle cx="300" cy="70" r="6" fill="#667eea" opacity="0.4"/>
+  <circle cx="350" cy="100" r="10" fill="#ed8936" opacity="0.3"/>
+  
+  <!-- Connection lines -->
+  <path d="M 90 60 Q 150 50 200 70" stroke="#48bb78" stroke-width="1" fill="none" opacity="0.3"/>
+  <path d="M 310 70 Q 280 80 250 90" stroke="#667eea" stroke-width="1" fill="none" opacity="0.3"/>
+</svg> 

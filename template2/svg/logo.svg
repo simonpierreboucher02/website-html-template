@@ -1,0 +1,20 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="22" fill="url(#logoGradient)" stroke="#f8f9fa" stroke-width="1"/>
+  
+  <!-- Letter M stylized -->
+  <path d="M 8 32 L 12 16 L 16 24 L 20 16 L 24 24 L 28 16 L 32 24 L 36 16 L 40 32" 
+        stroke="#f8f9fa" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Decorative dots -->
+  <circle cx="12" cy="12" r="1.5" fill="#f8f9fa" opacity="0.8"/>
+  <circle cx="36" cy="12" r="1.5" fill="#f8f9fa" opacity="0.8"/>
+  <circle cx="24" cy="8" r="1" fill="#f8f9fa" opacity="0.6"/>
+</svg> 

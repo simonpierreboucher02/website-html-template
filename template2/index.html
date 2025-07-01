@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Univers - Réflexions sur la tech, la vie et tout le reste</title>
+    <meta name="description" content="Blog personnel partageant des réflexions sur la technologie, le lifestyle, les voyages et la vie en général.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Microdata -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Mon Univers",
+        "description": "Réflexions sur la tech, la vie et tout le reste",
+        "url": "https://monunivers.blog",
+        "author": {
+            "@type": "Person",
+            "name": "Auteur du Blog"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="svg/logo.svg" alt="Mon Univers" width="48" height="48">
+                        <span class="logo-text">Mon Univers</span>
+                    </a>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                        <li><a href="about.html" class="nav-link">À propos</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-toggle" id="searchToggle" aria-label="Rechercher">
+                        <img src="svg/icons/search.svg" alt="" width="20" height="20">
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+                        <img src="svg/icons/moon.svg" alt="" width="20" height="20" class="theme-icon">
+                    </button>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                        <img src="svg/icons/menu.svg" alt="" width="20" height="20">
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Rechercher un article...">
+                <button class="search-close" id="searchClose">
+                    <span>&times;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main">
+        <!-- Hero section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">Bienvenue dans Mon Univers</h1>
+                        <p class="hero-subtitle">Réflexions sur la tech, la vie et tout le reste</p>
+                        <p class="hero-description">
+                            Découvrez mes pensées sur la technologie, le lifestyle, les voyages et les petites choses qui font la vie plus belle.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#latest-posts" class="btn btn-primary">Découvrir les articles</a>
+                            <a href="about.html" class="btn btn-secondary">En savoir plus</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="svg/hero-home.svg" alt="Illustration du blog" width="600" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest posts -->
+        <section class="latest-posts" id="latest-posts">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Derniers Articles</h2>
+                    <p class="section-subtitle">Mes réflexions les plus récentes</p>
+                </div>
+                
+                <div class="posts-grid">
+                    <!-- Article 1 -->
+                    <article class="post-card" data-category="lifestyle">
+                        <div class="post-image">
+                            <img src="svg/articles/workspace.svg" alt="Workspace organisé" width="400" height="250">
+                            <div class="post-category">
+                                <img src="svg/icons/lifestyle.svg" alt="" width="16" height="16">
+                                <span>Lifestyle</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <h3 class="post-title">
+                                <a href="article-template.html">Comment j'ai organisé mon workspace en 2025</a>
+                            </h3>
+                            <p class="post-excerpt">
+                                Découvrez comment j'ai transformé mon espace de travail pour maximiser ma productivité et mon bien-être.
+                            </p>
+                            <div class="post-meta">
+                                <time datetime="2025-01-15">15 janvier 2025</time>
+                                <span class="read-time">5 min de lecture</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="post-card" data-category="tech">
+                        <div class="post-image">
+                            <img src="svg/articles/workspace.svg" alt="Applications favorites" width="400" height="250">
+                            <div class="post-category">
+                                <img src="svg/icons/tech.svg" alt="" width="16" height="16">
+                                <span>Tech</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <h3 class="post-title">
+                                <a href="article-template.html">Mes 5 apps préférées ce mois-ci</a>
+                            </h3>
+                            <p class="post-excerpt">
+                                Une sélection personnelle des applications qui ont changé ma façon de travailler et de vivre.
+                            </p>
+                            <div class="post-meta">
+                                <time datetime="2025-01-10">10 janvier 2025</time>
+                                <span class="read-time">4 min de lecture</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="post-card" data-category="reflections">
+                        <div class="post-image">
+                            <img src="svg/articles/workspace.svg" alt="Minimalisme digital" width="400" height="250">
+                            <div class="post-category">
+                                <img src="svg/icons/reflections.svg" alt="" width="16" height="16">
+                                <span>Réflexions</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <h3 class="post-title">
+                                <a href="article-template.html">Réflexions sur le minimalisme digital</a>
+                            </h3>
+                            <p class="post-excerpt">
+                                Comment simplifier notre relation avec la technologie pour retrouver l'essentiel.
+                            </p>
+                            <div class="post-meta">
+                                <time datetime="2025-01-05">5 janvier 2025</time>
+                                <span class="read-time">6 min de lecture</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article class="post-card" data-category="travel">
+                        <div class="post-image">
+                            <img src="svg/articles/workspace.svg" alt="Voyage minimaliste" width="400" height="250">
+                            <div class="post-category">
+                                <img src="svg/icons/travel.svg" alt="" width="16" height="16">
+                                <span>Voyages</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <h3 class="post-title">
+                                <a href="article-template.html">Voyager léger : mon expérience</a>
+                            </h3>
+                            <p class="post-excerpt">
+                                Les leçons apprises en voyageant avec un bagage minimal et un esprit ouvert.
+                            </p>
+                            <div class="post-meta">
+                                <time datetime="2024-12-28">28 décembre 2024</time>
+                                <span class="read-time">7 min de lecture</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 5 -->
+                    <article class="post-card" data-category="tech">
+                        <div class="post-image">
+                            <img src="svg/articles/workspace.svg" alt="Productivité" width="400" height="250">
+                            <div class="post-category">
+                                <img src="svg/icons/tech.svg" alt="" width="16" height="16">
+                                <span>Tech</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <h3 class="post-title">
+                                <a href="article-template.html">Ma routine matinale digitale</a>
+                            </h3>
+                            <p class="post-excerpt">
+                                Comment j'utilise la technologie pour bien commencer mes journées.
+                            </p>
+                            <div class="post-meta">
+                                <time datetime="2024-12-20">20 décembre 2024</time>
+                                <span class="read-time">3 min de lecture</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 6 -->
+                    <article class="post-card" data-category="lifestyle">
+                        <div class="post-image">
+                            <img src="svg/articles/workspace.svg" alt="Bien-être" width="400" height="250">
+                            <div class="post-category">
+                                <img src="svg/icons/lifestyle.svg" alt="" width="16" height="16">
+                                <span>Lifestyle</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <h3 class="post-title">
+                                <a href="article-template.html">L'art de la déconnexion</a>
+                            </h3>
+                            <p class="post-excerpt">
+                                Pourquoi et comment j'apprends à me déconnecter régulièrement.
+                            </p>
+                            <div class="post-meta">
+                                <time datetime="2024-12-15">15 décembre 2024</time>
+                                <span class="read-time">5 min de lecture</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="posts-actions">
+                    <a href="#" class="btn btn-outline">Voir tous les articles</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h2 class="newsletter-title">Restez connecté</h2>
+                        <p class="newsletter-description">
+                            Recevez mes derniers articles directement dans votre boîte mail.
+                        </p>
+                    </div>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Votre adresse email" required>
+                            <button type="submit" class="btn btn-primary">S'abonner</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="svg/logo.svg" alt="Mon Univers" width="32" height="32">
+                        <span>Mon Univers</span>
+                    </div>
+                    <p class="footer-description">
+                        Réflexions sur la tech, la vie et tout le reste.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Catégories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-category="tech">Tech</a></li>
+                        <li><a href="#" data-category="lifestyle">Lifestyle</a></li>
+                        <li><a href="#" data-category="travel">Voyages</a></li>
+                        <li><a href="#" data-category="reflections">Réflexions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Suivez-moi</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <img src="svg/social/twitter.svg" alt="" width="20" height="20">
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <img src="svg/social/linkedin.svg" alt="" width="20" height="20">
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <img src="svg/social/github.svg" alt="" width="20" height="20">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mon Univers. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html> 

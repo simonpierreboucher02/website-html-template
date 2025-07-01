@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mon Univers</title>
+    <meta name="description" content="Contactez-moi pour échanger, poser des questions ou simplement dire bonjour.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="svg/logo.svg" alt="Mon Univers" width="48" height="48">
+                        <span class="logo-text">Mon Univers</span>
+                    </a>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Accueil</a></li>
+                        <li><a href="about.html" class="nav-link">À propos</a></li>
+                        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-toggle" id="searchToggle" aria-label="Rechercher">
+                        <img src="svg/icons/search.svg" alt="" width="20" height="20">
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+                        <img src="svg/icons/moon.svg" alt="" width="20" height="20" class="theme-icon">
+                    </button>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                        <img src="svg/icons/menu.svg" alt="" width="20" height="20">
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Rechercher un article...">
+                <button class="search-close" id="searchClose">
+                    <span>&times;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main">
+        <!-- Hero section -->
+        <section class="hero hero-contact">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">Contactez-moi</h1>
+                        <p class="hero-subtitle">Échangeons ensemble</p>
+                        <p class="hero-description">
+                            Envie de discuter, de poser une question ou simplement de dire bonjour ? N'hésitez pas à me contacter !
+                        </p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="svg/hero-contact.svg" alt="Illustration Contact" width="600" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact content -->
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-main">
+                        <div class="contact-section">
+                            <h2 class="contact-title">Envoyez-moi un message</h2>
+                            <p class="contact-description">
+                                Que ce soit pour une question, une suggestion ou simplement pour échanger, je serai ravi de vous répondre.
+                            </p>
+                            
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label">Nom</label>
+                                        <input type="text" id="name" name="name" class="form-input" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" id="email" name="email" class="form-input" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="subject" class="form-label">Sujet</label>
+                                    <input type="text" id="subject" name="subject" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea id="message" name="message" class="form-textarea" rows="6" required></textarea>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <aside class="contact-sidebar">
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">Autres façons de me contacter</h3>
+                            <div class="contact-methods">
+                                <div class="contact-method">
+                                    <div class="contact-icon">
+                                        <img src="svg/social/twitter.svg" alt="" width="24" height="24">
+                                    </div>
+                                    <div class="contact-info">
+                                        <h4 class="contact-method-title">Twitter</h4>
+                                        <p class="contact-method-text">Suivez-moi pour des mises à jour en temps réel</p>
+                                        <a href="#" class="contact-link">@monunivers</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-method">
+                                    <div class="contact-icon">
+                                        <img src="svg/social/linkedin.svg" alt="" width="24" height="24">
+                                    </div>
+                                    <div class="contact-info">
+                                        <h4 class="contact-method-title">LinkedIn</h4>
+                                        <p class="contact-method-text">Connectons-nous professionnellement</p>
+                                        <a href="#" class="contact-link">linkedin.com/in/monunivers</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-method">
+                                    <div class="contact-icon">
+                                        <img src="svg/social/github.svg" alt="" width="24" height="24">
+                                    </div>
+                                    <div class="contact-info">
+                                        <h4 class="contact-method-title">GitHub</h4>
+                                        <p class="contact-method-text">Découvrez mes projets open source</p>
+                                        <a href="#" class="contact-link">github.com/monunivers</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">FAQ</h3>
+                            <div class="faq-list">
+                                <details class="faq-item">
+                                    <summary class="faq-question">Combien de temps mettez-vous à répondre ?</summary>
+                                    <p class="faq-answer">Je m'efforce de répondre dans les 24-48 heures. Pour les questions urgentes, Twitter est souvent plus rapide !</p>
+                                </details>
+                                
+                                <details class="faq-item">
+                                    <summary class="faq-question">Acceptez-vous les collaborations ?</summary>
+                                    <p class="faq-answer">Oui, je suis ouvert aux collaborations intéressantes. N'hésitez pas à me présenter votre projet !</p>
+                                </details>
+                                
+                                <details class="faq-item">
+                                    <summary class="faq-question">Puis-je vous proposer un sujet d'article ?</summary>
+                                    <p class="faq-answer">Absolument ! J'adore recevoir des suggestions de sujets. Si cela m'inspire, je serai ravi d'en parler.</p>
+                                </details>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">Newsletter</h3>
+                            <p class="widget-text">
+                                Restez informé de mes derniers articles et réflexions.
+                            </p>
+                            <form class="newsletter-form" id="sidebarNewsletterForm">
+                                <div class="form-group">
+                                    <input type="email" class="form-input" placeholder="Votre email" required>
+                                    <button type="submit" class="btn btn-secondary">S'abonner</button>
+                                </div>
+                            </form>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="svg/logo.svg" alt="Mon Univers" width="32" height="32">
+                        <span>Mon Univers</span>
+                    </div>
+                    <p class="footer-description">
+                        Réflexions sur la tech, la vie et tout le reste.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Catégories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-category="tech">Tech</a></li>
+                        <li><a href="#" data-category="lifestyle">Lifestyle</a></li>
+                        <li><a href="#" data-category="travel">Voyages</a></li>
+                        <li><a href="#" data-category="reflections">Réflexions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Suivez-moi</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <img src="svg/social/twitter.svg" alt="" width="20" height="20">
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <img src="svg/social/linkedin.svg" alt="" width="20" height="20">
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <img src="svg/social/github.svg" alt="" width="20" height="20">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mon Univers. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html> 

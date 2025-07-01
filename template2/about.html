@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - Mon Univers</title>
+    <meta name="description" content="Découvrez qui je suis, mes passions et ce qui m'anime dans la vie.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="svg/logo.svg" alt="Mon Univers" width="48" height="48">
+                        <span class="logo-text">Mon Univers</span>
+                    </a>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Accueil</a></li>
+                        <li><a href="about.html" class="nav-link active">À propos</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-toggle" id="searchToggle" aria-label="Rechercher">
+                        <img src="svg/icons/search.svg" alt="" width="20" height="20">
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+                        <img src="svg/icons/moon.svg" alt="" width="20" height="20" class="theme-icon">
+                    </button>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                        <img src="svg/icons/menu.svg" alt="" width="20" height="20">
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Rechercher un article...">
+                <button class="search-close" id="searchClose">
+                    <span>&times;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main">
+        <!-- Hero section -->
+        <section class="hero hero-about">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">À propos de moi</h1>
+                        <p class="hero-subtitle">Passionné de tech, curieux de la vie</p>
+                        <p class="hero-description">
+                            Découvrez qui je suis, ce qui m'anime et pourquoi j'ai créé ce blog pour partager mes réflexions.
+                        </p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="svg/hero-about.svg" alt="Illustration À propos" width="600" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About content -->
+        <section class="about-content">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-main">
+                        <div class="about-section">
+                            <h2 class="about-title">Qui suis-je ?</h2>
+                            <div class="about-author">
+                                <img src="svg/avatar.svg" alt="Photo de profil" class="author-avatar" width="120" height="120">
+                                <div class="author-info">
+                                    <h3 class="author-name">Auteur du Blog</h3>
+                                    <p class="author-bio">
+                                        Passionné de technologie et de développement personnel, j'aime explorer les nouvelles façons de vivre et de travailler dans notre monde digital. Ce blog est mon espace pour partager mes découvertes, mes réflexions et mes expériences.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-section">
+                            <h2 class="about-title">Mon parcours</h2>
+                            <p class="about-text">
+                                Après plusieurs années dans le monde de la tech, j'ai réalisé l'importance de trouver un équilibre entre innovation et bien-être. J'ai commencé ce blog pour documenter mon voyage vers un mode de vie plus conscient et partager les leçons apprises en cours de route.
+                            </p>
+                            <p class="about-text">
+                                Aujourd'hui, je m'intéresse particulièrement au minimalisme digital, à la productivité consciente et aux nouvelles technologies qui améliorent vraiment notre qualité de vie.
+                            </p>
+                        </div>
+
+                        <div class="about-section">
+                            <h2 class="about-title">Mes passions</h2>
+                            <div class="passions-grid">
+                                <div class="passion-item">
+                                    <div class="passion-icon">
+                                        <img src="svg/icons/tech.svg" alt="" width="32" height="32">
+                                    </div>
+                                    <h3 class="passion-title">Technologie</h3>
+                                    <p class="passion-description">
+                                        Explorer les nouvelles technologies et leur impact sur notre quotidien.
+                                    </p>
+                                </div>
+                                
+                                <div class="passion-item">
+                                    <div class="passion-icon">
+                                        <img src="svg/icons/lifestyle.svg" alt="" width="32" height="32">
+                                    </div>
+                                    <h3 class="passion-title">Lifestyle</h3>
+                                    <p class="passion-description">
+                                        Découvrir des façons de vivre plus simples et plus épanouissantes.
+                                    </p>
+                                </div>
+                                
+                                <div class="passion-item">
+                                    <div class="passion-icon">
+                                        <img src="svg/icons/travel.svg" alt="" width="32" height="32">
+                                    </div>
+                                    <h3 class="passion-title">Voyages</h3>
+                                    <p class="passion-description">
+                                        Explorer le monde et découvrir de nouvelles cultures.
+                                    </p>
+                                </div>
+                                
+                                <div class="passion-item">
+                                    <div class="passion-icon">
+                                        <img src="svg/icons/reflections.svg" alt="" width="32" height="32">
+                                    </div>
+                                    <h3 class="passion-title">Réflexions</h3>
+                                    <p class="passion-description">
+                                        Prendre le temps de réfléchir et de partager mes pensées.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-section">
+                            <h2 class="about-title">Pourquoi ce blog ?</h2>
+                            <p class="about-text">
+                                Dans un monde où l'information circule à vitesse grand V, j'ai voulu créer un espace de pause et de réflexion. Ce blog est mon invitation à ralentir, à réfléchir ensemble et à partager des moments d'inspiration.
+                            </p>
+                            <p class="about-text">
+                                J'espère que mes articles vous donneront des idées, vous feront réfléchir ou simplement vous accompagneront dans vos moments de lecture.
+                            </p>
+                        </div>
+                    </div>
+
+                    <aside class="about-sidebar">
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">Contact rapide</h3>
+                            <p class="widget-text">
+                                Envie d'échanger ? N'hésitez pas à me contacter !
+                            </p>
+                            <a href="contact.html" class="btn btn-primary">Me contacter</a>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">Mes derniers articles</h3>
+                            <div class="widget-posts">
+                                <article class="widget-post">
+                                    <h4 class="widget-post-title">
+                                        <a href="article-template.html">Comment j'ai organisé mon workspace en 2025</a>
+                                    </h4>
+                                    <time datetime="2025-01-15">15 janvier 2025</time>
+                                </article>
+                                
+                                <article class="widget-post">
+                                    <h4 class="widget-post-title">
+                                        <a href="article-template.html">Mes 5 apps préférées ce mois-ci</a>
+                                    </h4>
+                                    <time datetime="2025-01-10">10 janvier 2025</time>
+                                </article>
+                                
+                                <article class="widget-post">
+                                    <h4 class="widget-post-title">
+                                        <a href="article-template.html">Réflexions sur le minimalisme digital</a>
+                                    </h4>
+                                    <time datetime="2025-01-05">5 janvier 2025</time>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">Suivez-moi</h3>
+                            <div class="social-links">
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <img src="svg/social/twitter.svg" alt="" width="20" height="20">
+                                    <span>Twitter</span>
+                                </a>
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <img src="svg/social/linkedin.svg" alt="" width="20" height="20">
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="#" class="social-link" aria-label="GitHub">
+                                    <img src="svg/social/github.svg" alt="" width="20" height="20">
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="svg/logo.svg" alt="Mon Univers" width="32" height="32">
+                        <span>Mon Univers</span>
+                    </div>
+                    <p class="footer-description">
+                        Réflexions sur la tech, la vie et tout le reste.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Catégories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-category="tech">Tech</a></li>
+                        <li><a href="#" data-category="lifestyle">Lifestyle</a></li>
+                        <li><a href="#" data-category="travel">Voyages</a></li>
+                        <li><a href="#" data-category="reflections">Réflexions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Suivez-moi</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <img src="svg/social/twitter.svg" alt="" width="20" height="20">
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <img src="svg/social/linkedin.svg" alt="" width="20" height="20">
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <img src="svg/social/github.svg" alt="" width="20" height="20">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mon Univers. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html> 

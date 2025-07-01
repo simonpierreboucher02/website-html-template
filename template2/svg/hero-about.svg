@@ -1,0 +1,70 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aboutGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f56565;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#ed8936;stop-opacity:0.05" />
+    </linearGradient>
+    <linearGradient id="aboutAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f56565;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ed8936;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#aboutGradient)"/>
+  
+  <!-- Floating elements -->
+  <circle cx="120" cy="100" r="25" fill="url(#aboutAccent)" opacity="0.2"/>
+  <circle cx="480" cy="80" r="20" fill="url(#aboutAccent)" opacity="0.15"/>
+  <circle cx="100" cy="320" r="30" fill="url(#aboutAccent)" opacity="0.25"/>
+  <circle cx="520" cy="340" r="22" fill="url(#aboutAccent)" opacity="0.2"/>
+  
+  <!-- Central composition - personal representation -->
+  <g transform="translate(200, 100)">
+    <!-- Main figure silhouette -->
+    <circle cx="100" cy="80" r="40" fill="url(#aboutAccent)" opacity="0.3"/>
+    
+    <!-- Abstract representation of interests -->
+    <!-- Tech elements -->
+    <g transform="translate(50, 50)">
+      <rect x="0" y="0" width="30" height="20" rx="4" fill="#667eea" opacity="0.6"/>
+      <rect x="5" y="5" width="20" height="2" fill="#f8f9fa"/>
+      <rect x="5" y="10" width="15" height="2" fill="#f8f9fa"/>
+    </g>
+    
+    <!-- Lifestyle elements -->
+    <g transform="translate(200, 60)">
+      <circle cx="0" cy="0" r="15" fill="#f56565" opacity="0.6"/>
+      <path d="M -8 -8 L 8 8 M -8 8 L 8 -8" stroke="#f8f9fa" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Travel elements -->
+    <g transform="translate(150, 150)">
+      <path d="M 0 0 L 20 0 L 10 -10 Z" fill="#4299e1" opacity="0.6"/>
+      <circle cx="10" cy="-5" r="2" fill="#f8f9fa"/>
+    </g>
+    
+    <!-- Reflection elements -->
+    <g transform="translate(80, 180)">
+      <path d="M 0 0 Q 10 -10 20 0 Q 10 10 0 0" fill="#ed8936" opacity="0.6"/>
+      <circle cx="10" cy="-5" r="1" fill="#f8f9fa"/>
+    </g>
+  </g>
+  
+  <!-- Connecting lines representing connections -->
+  <path d="M 150 200 Q 300 150 450 200" 
+        stroke="#f56565" stroke-width="1.5" fill="none" opacity="0.3" stroke-linecap="round"/>
+  <path d="M 150 250 Q 300 300 450 250" 
+        stroke="#ed8936" stroke-width="1.5" fill="none" opacity="0.3" stroke-linecap="round"/>
+  
+  <!-- Decorative dots -->
+  <g transform="translate(80, 120)">
+    <circle cx="0" cy="0" r="2" fill="#f56565" opacity="0.6"/>
+    <circle cx="0" cy="0" r="5" fill="none" stroke="#f56565" stroke-width="1" opacity="0.3"/>
+  </g>
+  
+  <g transform="translate(520, 200)">
+    <circle cx="0" cy="0" r="1.5" fill="#ed8936" opacity="0.7"/>
+    <circle cx="0" cy="0" r="4" fill="none" stroke="#ed8936" stroke-width="1" opacity="0.4"/>
+  </g>
+</svg> 

@@ -1,0 +1,20 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Airplane -->
+  <path d="M 4 12 L 20 12" stroke="#4299e1" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Airplane body -->
+  <path d="M 8 12 L 16 12 L 14 10 L 10 10 Z" fill="#4299e1"/>
+  
+  <!-- Wings -->
+  <path d="M 12 10 L 12 6" stroke="#4299e1" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M 12 10 L 12 16" stroke="#4299e1" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tail -->
+  <path d="M 16 12 L 18 10" stroke="#4299e1" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Clouds -->
+  <circle cx="6" cy="8" r="1.5" fill="#e2e8f0" opacity="0.7"/>
+  <circle cx="7.5" cy="8" r="1" fill="#e2e8f0" opacity="0.7"/>
+  <circle cx="18" cy="6" r="1" fill="#e2e8f0" opacity="0.7"/>
+  <circle cx="19.5" cy="6" r="0.8" fill="#e2e8f0" opacity="0.7"/>
+</svg> 
